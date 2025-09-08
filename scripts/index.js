@@ -44,24 +44,35 @@ const displayWord = (words) => {
     const container = document.getElementById('word-meaning-card-container');
     container.innerHTML = "";
 
-    words.forEach(wordData => {
-        console.log(wordData);
-        const newCard = document.createElement('div');
-        newCard.innerHTML = `
-            <div class="bg-white rounded-lg p-10 space-y-5 text-center">
-                <h2 class="poppins font-semibold text-2xl">${wordData.word}</h2>
-                <h5 class="poppins font-medium text-sm">Meaning / Pronunciation</h5>
-                <h2 class="siliguri font-medium text-3xl">"${wordData.meaning} / ${wordData.pronunciation}"</h2>
-
-                <div class="mt-9 flex justify-between">
-                    <button class="px-3 py-2 bg-[#1A91FF20] rounded-lg text-sm text-[#374957]"><i class="fa-solid fa-circle-info"></i></button>
-                    <button class="px-3 py-2 bg-[#1A91FF20] rounded-lg text-sm text-[#374957]"><i class="fa-solid fa-volume-high"></i></button>
-                </div>
+    if (words.length === 0) {
+        const alert = document.createElement('div');
+        alert.setAttribute('class', 'col-span-3');        
+        alert.innerHTML = `
+            <div class="text-center">
+                <h6 class="siliguri font-light text-sm text-[#79716b]">এই <span class="poppins">Lesson</span> এ কোনও <span class="poppins">Vocabulary</span> যুক্ত করা হয়নি
+                </h6>
+                <h2 class="siliguri font-medium text-4xl">পরবর্তী <span class="poppins">Lesson</span> এ যান।</h2>
             </div>
         `
-        container.appendChild(newCard);
+        container.appendChild(alert);
+    } else {
+        words.forEach(wordData => {
+            const newCard = document.createElement('div');
+            newCard.innerHTML = `
+                <div class="bg-white rounded-lg py-5 px-7 space-y-5 text-center">
+                    <h2 class="poppins font-semibold text-2xl">${wordData.word ? wordData.word : 'Word not Found'}</h2>
+                    <h5 class="poppins font-medium text-sm">Meaning / Pronunciation</h5>
+                    <h2 class="siliguri font-medium text-2xl">"${wordData.meaning ? wordData.meaning : "Meaning not Found"}" <span class="poppins">/</span> "${wordData.pronunciation}"</h2>
 
-    });
+                    <div class="mt-7 mx-4 flex justify-between">
+                        <button class="px-3 py-2 bg-[#1A91FF20] rounded-lg text-sm text-[#374957]"><i class="fa-solid fa-circle-info"></i></button>
+                        <button class="px-3 py-2 bg-[#1A91FF20] rounded-lg text-sm text-[#374957]"><i class="fa-solid fa-volume-high"></i></button>
+                    </div>
+                </div>
+            `
+            container.appendChild(newCard);
+        });
+    }
 }
 
 loadAllLessonsData();
