@@ -36,12 +36,16 @@
         </div>
         <div class="navbar-end hidden lg:flex">
             <ul class="menu menu-horizontal px-1 poppins space-x-3">
-                <li><a class="btn btn-outline btn-primary text-[12px]"><i class="fa-regular fa-circle-question"></i>
-                        FAQ</a></li>
-                <li><a class="btn btn-outline btn-primary text-[12px]"><i class="fa-solid fa-book-open"></i> Learn</a>
+                <li><a class="btn btn-outline btn-primary text-[12px]">
+                        <i class="fa-regular fa-circle-question"></i> FAQ
+                    </a></li>
+                <li>
+                    <a class="btn btn-outline btn-primary text-[12px]"><i class="fa-solid fa-book-open"></i> Learn</a>
                 </li>
-                <li><a class="btn btn-outline btn-primary text-[12px]"><i
-                            class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                <li><a class="btn btn-outline btn-primary text-[12px]">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="dropdown">
@@ -67,14 +71,15 @@
             <section id="hero-text">
                 <h1 class="poppins text-4xl font-bold mb-8"><span class="text-[#00bcff]">English</span> is easy !!</h1>
                 <p class="siliguri text-xl font-light">
-                    আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ
+                    আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের
+                    Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ
                 </p>
             </section>
             <form id="hero-form" class="mt-8">
-                <fieldset class="fieldset w-xs">
+                <fieldset class="fieldset w-xs flex flex-col items-center mx-auto md:items-start md:mx-0">
                     <input type="email" class="input border-gray-200" placeholder="Enter Your Name" />
                     <input type="password" class="input border-gray-200" placeholder="Enter Password" />
-                    <button class="btn btn-primary mt-3 poppins font-light w-40">Get Started</button>
+                    <button class="btn btn-primary mt-3 poppins font-light text-[12px] w-40">Get Started</button>
                 </fieldset>
             </form>
         </section>
@@ -84,10 +89,21 @@
     </header>
     <!-- header section ends here -->
 
-    <!-- select lesson section starts here -->
-    
 
-    <script src="./javascripts/script.js"></script>
+    <main>
+        <!-- select lesson section starts here -->
+        <section id="lesson-section" class="container mx-auto my-12">
+            <h1 class="poppins text-4xl font-bold mb-8 text-center"><span class="text-[#00bcff]">Let's</span> Learn
+                Vocabularies
+            </h1>
+
+            <section id="lesson-button-container" class="flex flex-wrap gap-4 justify-center"></section>
+        </section>
+        <!-- select lesson section ends here -->
+
+    </main>
+
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>
