@@ -49,7 +49,8 @@ const displayWord = (words) => {
         alert.setAttribute('class', 'col-span-3');        
         alert.innerHTML = `
             <div class="text-center">
-                <h6 class="siliguri font-light text-sm text-[#79716b]">এই <span class="poppins">Lesson</span> এ কোনও <span class="poppins">Vocabulary</span> যুক্ত করা হয়নি
+                <img class="mx-auto" src="./assets/alert-error.png" alt="alert"/>
+                <h6 class="siliguri font-light text-xl text-[#79716b]">এই <span class="poppins">Lesson</span> এ কোনও <span class="poppins">Vocabulary</span> যুক্ত করা হয়নি
                 </h6>
                 <h2 class="siliguri font-medium text-4xl">পরবর্তী <span class="poppins">Lesson</span> এ যান।</h2>
             </div>
